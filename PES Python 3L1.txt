@@ -1,0 +1,519 @@
+#Basic operators
+#1.Write a program to find given number is odd or Even
+var1=int(input("Enter the number"))
+if var1%2==0 :
+    print("The number",var1,"is even")
+else :
+    print ("The number",var1,"is odd")
+
+
+#Basic Operators
+#2.Write a program to find the biggest of 3 numbers ( Use If Condition )
+var1=int(input("Enter 1st number"))
+var2=int(input("Enter 2nd number"))
+var3=int(input("Enter 3rd number"))
+if var1>var2 and var1>var3:
+  print ("The biggest no is",var1)
+elif var2>var1 and var2>var3:
+  print ("The biggest no is",var2)
+else:
+  print ("The biggest no is",var3)
+
+#Basic Operators
+#3.Write a program to find the number is Prime or not.
+num=int(input("Enter the number to check for prime"))
+if num==1:
+  print ("Number",num,"is not a prime number")
+elif num>1:
+  for i in range(2,num):
+    if num%i==0:
+      print ("Number",num," is not a prime number")
+      break
+  else:
+    print ("Number",num,"is a prime number")
+
+#Command line Arguments
+#4.Write a program to receive 5 command line arguments and print each argument separately. Example : >> python test.py arg1 arg2 arg3 arg4 arg5 a) From the above statement your program should receive arguments and print them each of them. b) Find the biggest of three numbers, where three numbers are passed as command line arguments.'''
+#test.py
+import sys
+    
+(arg1,arg2,arg3,arg4,arg5) = (sys.argv[0],sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
+print ("arg1=",arg1)
+print ("arg2=",arg2)
+print ("arg3=",arg3)
+print ("arg4=",arg4)
+print ("arg5=",arg5)
+
+arg3,arg4,arg5=input("Enter 3 numbers")
+if arg3>arg4 and arg3>arg5:
+  print ("the biggest no is",arg3)
+elif arg4>arg3 and arg4>arg5:
+  print ("the biggest no is",arg4)
+else:
+  print ("the biggest no is",arg5)
+
+
+#Basic String operations
+#5.Write a program to read string and print each character separately. 
+#a) Slice the string using slice operator [:] slice the portion the strings to create a sub strings. 
+#b) Repeat the string 100 times using repeat operator * 
+#c) Read strig 2 and concatenate with other string using + operator.
+str1=input("Enter the string")#needs to give as "hello india" including the quotes
+for character in str1:
+  print (character)
+str1=input("Enter the string")
+str2=str1[1:-1]
+print ("str2=",str2)
+print ("str1=",str1)
+print ("str1*100 times=",str1*100)
+str3=str1+" hello India"
+print ("str3 =",str3)
+
+
+#Basic List operations
+#6.Create a list with at least 10 elements in it 
+  #print all elements 
+  #perform slicing 
+  #perform repetition with * operator 
+  #Perform concatenation wiht other list.
+str1=input("Enter the list1")
+list1=list(str1)
+print ("list1=",list1)
+list2=list(input("Enter list2 elements"))
+print ("list2=",list2)
+print ("list1[1:3]=",list1[1:3])
+print ("list2[3:-3]=",list2[3:-3])
+print ("list1*2=",list1*2)
+print ("list1+list2=",list1+list2)
+
+
+#Python List functions and Methods
+#7.Write a program to create two list A and B such that List A contains Employee Id, List B contains Employee name ( minimum 10 entries in each list ) and perform following operations 
+a) Print all names on to screen 
+b) Read the index from the user and print the corresponding name from both list. 
+c) Print the names from 4th position to 9th position 
+d) Print all names from 3rd position till end of the list 
+e) Repeat list elements by specified number of times ( N- times, where N is entered by user) 
+f) Concatenate two lists and print the output. 
+g) Print element of list A and B side by side.( i.e. List-A First element , List-B First element )'''
+listEId=[1,2,3,4,5,6,7,8,9,10]
+listEName=['Rohit','Dhawan','Kohli','Rahane','Manish','Dhoni','Hardik','Chahal','Bhuvi','Bumrah']
+print (listEName)
+index=int(input("Enter the index to read from"))
+print (listEName[index])
+print (listEId[index])
+print (listEName[3:-1])
+print (listEName[2:])
+ntime=int(input("enter the no of times you wish to repeat the list"))
+print (listEId*ntime)
+print (listEName*ntime)
+concatList=listEId+listEName
+print (concatList)
+for element in range(len(listEId)):
+  print ("ListEid element",listEId[element],"listEName elements",listEName[element])
+
+
+#Decision making (IF .. Else structure)
+#8.Write program to find the biggest and Smallest of N numbers. 
+PS: Use the functions to find biggest and smallest numbers.'''
+num=list(input("Enters numbers again"))#either enter as ['1','21','23']or 1,23,45,65
+biggest=max(num)
+smallest=min(num)
+print ("Maximum is",biggest)
+print ("Minimum is",smallest)
+
+
+
+#Looping Structures
+#9.Using loop structures print even numbers between 1 to 100. 
+a) By using For loop , use continue/ break/ pass statement to skip odd numbers.
+i) break the loop if the value is 50 
+ii) Use continue for the values 10,20,30,40,50
+
+b) By using while loop, use continue/ break/ pass statement to skip odd numbers.
+i) break the loop if the value is 90 
+ii) Use continue for the values 60,70,80,90'''
+
+#Using for loop structure to print even numbers between 1 to 100
+print ("The even numbers from 1 to 100 using for loop is below:" )
+for i in range(1,101):
+  if i%2==0:
+    print (i)
+print ("\n\n")
+
+
+#.a) By using For loop , use continue/ break/ pass statement to skip odd numbers.
+print( "The numbers from 1 to 100 skipping odd numbers using for loop is below:" )
+for i in range (1,101):
+  if i%2!=0:
+    continue
+  print (i)
+print ("\n\n")
+
+
+#.i) break the loop if the value is 50 
+print ("Breaking the for loop i ==50")
+for i in range(1,101):
+    if i==50:
+      break
+    print (i)
+print ("\n\n"    )
+
+
+#.ii) Use continue for the values 10,20,30,40,50
+print ("using continue for the values 10,20,30,40,50"    )
+for i in range (1,101):
+  if i==10 or i==20 or i==30 or i==40 or i==50:
+    continue
+  print (i)
+print ("\n")    
+
+
+
+#Using while loop structure to print even numbers between 1 to 100
+print ("The even numbers from 1 to 100 using while loop is below:" )
+i=1
+while i<=100:
+  if i%2==0:
+    print (i)
+  i+=1
+print ("\n\n")
+
+
+#.a) By using while loop , use continue/ break/ pass statement to skip odd numbers.
+print ("The numbers from 1 to 100 skipping odd numbers using while loop is below:" )
+i=1
+while i<=100:
+  if i%2!=0:
+    i+=1
+    continue
+  print (i)
+  i+=1
+print ("\n\n")
+
+
+#.i) break the loop if the value is 50 
+print ("Breaking the for loop i ==50")
+i=1
+while i<=100:
+  if i==50:
+    break
+  print (i)
+  i=i+1    
+
+
+#.ii) Use continue for the values 10,20,30,40,50
+print ("using continue for the values 10,20,30,40,50")
+i=1
+while i<=100:
+  if i==10 or i==20 or i==30 or i==40 or i==50:
+    i=i+1
+    continue
+  print (i)
+  i=i+1
+print ("\n")
+
+
+
+#Math and Random Modules
+#10.Using the built in functions on Numbers perform following operations 
+a) Round of the given floating point number example : n=0.543 then round it next decimal number , i.e n=1.0 Use round() function 
+b) Find out the square root of a given number. ( use sqrt(x) function) 
+c) Generate random number between 0, and 1 ( use random() function) 
+d) Generate random number between 10 and 500. ( use uniform() function) 
+e) Explore all Math and Random module functions on a given number/ List. ( Refer to tutorial for Math & Random functions list)'''
+import math
+import random
+num1=0.543
+print ("The round off to next decimal for",num1,"is",round(num1,0))
+num2=990
+print ("The sqrt of number",num2,"is",math.sqrt(num2))
+print ("A random number between 0 and 1 using random function is",random.random())
+print ("A random number between 10 and 500 using uniform function is",random.uniform(10,500))
+
+print ("BELOW STARTS FOR MATH FUNCTIONS LIST")
+print ("abs(-1.8)=",abs(-1.8))
+print("\nceil(1.3)=",math.ceil(1.3))
+print("ceil(-1.3)=",math.ceil(-1.3))
+print ("ceil(1.6)=",math.ceil(1.6))
+print ("ceil(-1.6)=",math.ceil(-1.6))
+print ("\nexp(2)=",math.exp(2))
+print ("\nfabs(-1.4)=",math.fabs(-1.4))
+print ("\nfloor(1.6)=",math.floor(1.6))
+print ("floor(-1.6)=",math.floor(-1.6))
+print ("floor(1.2)=",math.floor(1.2))
+print ("floor(-1.2)=",math.floor(-1.2))
+print ("\nlog(2)=",math.log(2))
+print ("\nlog10(2)=",math.log10(2))
+print ("\nmax(2,34,55,56)=",max(2,34,55,56))
+print ("\nmin(2,34,55,56)=",min(2,34,55,56))
+print ("\nmodf(100.233444)=",math.modf(100.233444))
+print ("math.modf(math.pi)=",math.modf(math.pi))
+print ("\npow(2,3) i.e 2**3=",pow(2,3))
+print ("\nround(80.23456, 2)=",round(80.23456, 2))
+print ("round(100.000056, 3)=",round(100.000056, 3))
+print ("round(-100.000056, 3)=",round(-100.000056, 3))
+print ("\nSqrt(3)=",math.sqrt(3))
+print ("\nBELOW STARTS FOR RANDOM FUNCTIONS LIST")
+print ("choice([1, 2, 3, 5, 9])=",random.choice([1, 2, 3, 5, 9]))
+print ("choice('A String')=",random.choice('A String'))
+print ("\nPrinting a number where start=100,end=1000,step=2")
+print ("randrange(100, 1000, 2) =",random.randrange(100, 1000, 2))
+print ("\nPrinting a number where start=100,end=1000,step=3")
+print ("randrange(100, 1000, 3)=",random.randrange(100, 1000, 3))
+print ("\nFirst random number=",random.random())
+print ("Second random number=",random.random())
+random.seed( 10 )
+print ("Random number with seed 10=",random.random())
+# It will generate same random number
+random.seed( 10 )
+print ("Random number with seed 10=",random.random())
+print ("Random number",random.random())
+print ("Random number",random.random())
+print ("Random number",random.random())
+list = [2, 13, 133, 51,'A'];
+random.shuffle(list)
+print ("\nReshuffled list=",list)
+random.shuffle(list)
+print ("Reshuffled list=",list)
+print ("\nRandom Float uniform(2,14)=",random.uniform(2,14))
+print ("Random Float uniform(4,11)=",random.uniform(4,11))
+
+
+
+
+
+#Functions
+#11.Write a program to check given string is Palindrome or not. 
+#That is reverse the given string and check whether it is same as original string, if so then it is palindrome. Example : String = "Malayalam" reverse string = "Malayalam" hence given string is palindrome.'''
+def PalindromeCheckRequiredParam(myStr):
+  #'this checks for the palindrokme string'
+  #myStr="Hello buddy"
+  myStr=myStr.lower()
+  myStr1=myStr[::-1]
+  if myStr==myStr1:
+    print ("The given string",myStr,"is palindrome")
+  else:
+    print ("The given string",myStr,"is not palindrome")
+  return
+#myStr=input("Enter the string")
+PalindromeCheckRequiredParam("hello world")
+PalindromeCheckRequiredParam("POP")
+
+# Use built functions to check given string is palindrome or not.
+def PalindromeCheckDefaultParam(myStr="Malayalam"):
+  #'this checks for the palindrokme string'
+  #myStr="Hello buddy"
+  myStr=myStr.lower()
+  myStr1=myStr[::-1]
+  if myStr==myStr1:
+    print ("The given string",myStr,"is palindrome")
+  else:
+    print ("The given string",myStr,"is not palindrome")
+  return
+#myStr=input("Enter the string")
+PalindromeCheckDefaultParam("duud")
+PalindromeCheckDefaultParam()
+
+
+
+#Strings
+#12.Write a program to check how many ovals present in the given string. That is, count the number of " a e i o u" in the given string and print the numbers against each oval. Example :- "This is Python" Number of total ovals = 3 i = 2 o =1'''
+myStr=input("Enter the string")
+myStr=myStr.lower()
+list1=list(myStr)
+print (myStr)
+count=0 
+countA=0 
+countE=0 
+countI=0 
+countO=0 
+countU=0
+for i in list1:
+  if i=='a':
+    count+=1
+    countA+=1
+  elif i=='e':
+    count+=1
+    countE+=1
+  elif i=='i':
+    count+=1
+    countI+=1
+  elif i=='o':
+    count+=1
+    countO+=1
+  elif i=='u':
+    count+=1
+    countU+=1
+print("No of total vowels=",count)
+print( "count of A",countA)
+print ("count of E",countE)
+print( "count of I",countI)
+print ("count of O",countO)
+print ("count of U",countU)
+
+
+
+#Tuples
+#13.Create Tuple as specified below 
+a) Create a Tuple tup1 with days in a week & print the tuple elements 
+b) Create a Tuple tup2 with months in a year and concatenate it with tup1 
+c) Create 3 tuples( tup1,tup2,tup3) with numbers and determine which is greater. 
+d) Try to delete an individual element in tup1 and try deleting complete Tuple -tup1 Notice the error type you get. 
+e) Insert new element in to tuple by typecasting it to List'''
+tup1=('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday')
+for each in tup1:
+  print( each)
+tup2=('January','February','March','April','May','June','July','August','September',
+'October','November','December')
+tupConcat=tup1+tup2
+print ("tupConcat=",tupConcat)
+tup1=(100,9,2,5,3)
+tup2=(22,44,20,13,45,9)
+tup3=(99,12,34,21,55)
+if tup1>tup2 and tup1>tup3:
+  print ("Tup1 is the biggest")
+elif tup2>tup1 and tup2>tup3:
+  print ("tup2 is the biggest")
+else:
+  print ("tup3 is the biggest of all")
+'''del tup1[2]
+  Traceback (most recent call last):
+  File "python", line 24, in <module>
+TypeError: 'tuple' object doesn't support item deletion'''
+del tup1
+print (tup1)
+'''Traceback (most recent call last):
+  File "python", line 29, in <module>
+NameError: name 'tup1' is not defined'''
+tup2=list(tup2)
+tup2.append(323)
+print ("Tup2 after appending a new item to this by typecasting it to List is",tup2)
+
+
+#Tuples
+#14.Create two tuples tup1 & tup2 and apply all built in functions on tuples. ( Refer Tutorial for the Built in functions list)'''
+tup1=('abc',1,3,'123ab','xyz')
+tup2=('wer',33,'213erf','rte1',12,123)
+print ("tup1 is",tup1)
+print ("tup2 is",tup2)
+print ("Length of tup1 is",len(tup1))
+print ("Length of tup2 is",len(tup2))
+print ("Max of tup1 is",max(tup1))
+print ("Max of tup2 is",max(tup2))
+print ("Min of tup1 is",min(tup1))
+print ("Min of tup2 is",min(tup2))
+aList = (123, 'xyz', 'zara', 'abc')
+aTuple = tuple(aList)
+print ("Tuple elements are",aTuple)
+
+
+#Dictionary and Date & Time
+#15.Using calendar module perform following operations. 
+a)print the 2016 calendar with space between months as 10 character.
+b) How many leap days between the years 1980 to 2025. 
+c) Check given year is leap year or not. 
+d) print calendar of any specified month of the year 2016.'''
+import calendar
+print ("calendar for year 2016 with space between months as 10 character is", calendar.calendar(2016,c=10))
+print ("Leap days between the years 1980 to 2025 are",calendar.leapdays(1980,2025),"days")
+enterYear=int(input("enter the year to see if leap or not"))
+if calendar.isleap(enterYear)==True:
+  print ("year",enterYear,"is a leap year")
+else:
+  print ("year",enterYear,"is not a leap year")
+enterMonth2016=int(input("Enter the month no of 2016 year to print it"))
+print (calendar.month(2016,enterMonth2016,w=2,l=1))
+
+
+#Functions
+#16.Write a program to generate a Fibonacci series using a function called fib(n), a) where N is user specified argument specifies number of elements in the series.'''
+def fib(nterms):
+  "This generates a fibonacci series"
+  a=0
+  b=1
+  if nterms<=0:
+    print("please enter positive number")
+  elif nterms==1:
+    print("Fibonacci series:",a)
+  elif nterms==2:
+    print (a)
+    print (b)
+  else:
+    print (a)
+    print (b)
+    while(nterms>2):
+      numnext=a+b
+      print (numnext)
+      a=b
+      b=numnext
+      nterms=nterms-1
+# Now you can call fib function
+n=int(input("Enter the no of terms"))
+fib(n)
+
+
+
+
+#17.Create a Calculator with the following functions. 
+a) Addition/subtraction/multiplication and division of two numbers ( Note: Create separate function for each operation ) 
+b) Find square root of a given number.( Use keyword arguments in your function) 
+c) Create a list of sub strings from a given string, such that sub strings are created with given character. That is, string = "Pack: My: Box: With: Good: Food" Create sub strings with the delimiter character ":" such that the following sub strings are created. substrlist=[Pack, My, Box, With, Good, Food] Note : Function should take at least 2 parameters ( Main string and delimiter character) return value from function will be list of substring.'''
+import math
+def Addition(a,b):
+  #'This adds the two nos'
+  sum=a+b
+  print ("sum is",sum)
+def Subtraction(a,b):
+  #'This finds the difference of two nos'
+  sub=a-b
+  print ("Subtraction is",sub)
+def Multiply(a,b):
+  #'This multiplies two nos'
+  mul=a*b
+  print ("multiplication is",mul)
+def Division(a,b):
+  #'This divides the nos'
+  div=a/b
+  print ("Division is",div)
+def Sqrt(num):
+  #'This finds the square root of a number'
+  print ("SQrt is ",math.sqrt(num))
+Addition(3,5)
+Subtraction(9,3)
+Multiply(3,5)
+Division(4,2)
+Sqrt(9)
+Sqrt(num=81)
+
+def subStr(str,delcharctr):
+  #'This creates sub string from given string with the delimiter character :'
+  subStr= str.split(delcharctr,6)
+  print ("Original String is",str)
+  return subStr
+str="Pack:My:Box:With:Good:Food"
+delcharctr=':'
+subStr= subStr(str,delcharctr)
+print ("Substring from string is",subStr)
+
+
+
+
+
+#File I/O Operations
+#18.Write a program to perform following file operations 
+a) Open the file in read mode and read all its contents on to STDOUT. 
+b) Open the file in write mode and enter 5 new lines of strings in to the new file. 
+c) Open file in Append mode and add 5 lines of text into it.'''
+fo = open("firstFile.txt","r")
+print ("Read String is : ",fo.read())
+fo.close()
+
+fo= open("firstFile2.txt","w")
+fo.writelines("so we have come to the end now\ni dont think this is\nyes very true\n still to go\n this is final now")
+fo.close()
+
+
+fo= open("firstFile2.txt","a")
+fo.writelines("finally\nso we have come to the end now\n again and again\nsorry to keep you waiting\nFINAL ONE!!!!")
+fo.close()
